@@ -1,26 +1,7 @@
 <template>
-  <el-config-provider :locale="currentLocale">
-    <router-view />
-    <ReDialog />
-  </el-config-provider>
+  <SmartFactory class="fixed" />
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
-import { ElConfigProvider } from "element-plus";
-import { ReDialog } from "@/components/ReDialog";
-import zhCn from "element-plus/es/locale/lang/zh-cn";
-
-export default defineComponent({
-  name: "app",
-  components: {
-    [ElConfigProvider.name]: ElConfigProvider,
-    ReDialog
-  },
-  computed: {
-    currentLocale() {
-      return zhCn;
-    }
-  }
-});
+<script lang="ts" setup>
+import SmartFactory from "@/views/smart_factory/index.vue";
 </script>
