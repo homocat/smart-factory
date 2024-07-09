@@ -10,7 +10,7 @@ import RightPanel from "@/views/smart_factory/components/RightPanel.vue";
     class="relative flex flex-col m-0 p-0 justify-center items-center w-[100vw] h-[100vh] bg-[url('src/assets/framework/preview-11.png')]"
   >
     <Header />
-    <main class="flex justify-between flex-1 w-[100vw]">
+    <main class="flex justify-between flex-1 w-[100vw] overflow-hidden">
       <LeftPanel />
       <CenterPanel />
       <RightPanel />

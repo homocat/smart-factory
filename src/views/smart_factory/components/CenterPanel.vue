@@ -1,6 +1,7 @@
 <script setup>
 import echarts from "@/plugins/echarts";
 import { onMounted } from "vue";
+import ChartTable from "@/views/smart_factory/components/ChartTable.vue";
 
 onMounted(() => {
   let dom1 = document.getElementById("charts");
@@ -48,24 +49,16 @@ onMounted(() => {
     return res;
   })();
   option = {
-    tooltip: {
-      trigger: "axis",
-      axisPointer: {
-        type: "cross",
-        label: {
-          backgroundColor: "#283b56"
-        }
-      }
-    },
+    // tooltip: {
+    //   trigger: "axis",
+    //   axisPointer: {
+    //     type: "cross",
+    //     label: {
+    //       backgroundColor: "#283b56"
+    //     }
+    //   }
+    // },
     legend: {},
-    toolbox: {
-      show: true,
-      feature: {
-        dataView: { readOnly: false },
-        restore: {},
-        saveAsImage: {}
-      }
-    },
     dataZoom: {
       show: false,
       start: 0,
@@ -214,7 +207,7 @@ onMounted(() => {
 <template>
   <div class="flex flex-col justify-center items-center flex-1 m-[1rem]0">
     <div
-      class="flex flex-row justify-start items-center bg-cover bg-[url('src/assets/framework/preview-6.png')] w-[100%] h-1/5 mb-[1rem]"
+      class="flex flex-row justify-center items-center bg-cover bg-[url('src/assets/framework/preview-6.png')] w-[100%] h-1/5 mb-[1rem]"
     >
       <div class="flex text-white">
         <img alt="" src="/src/assets/framework/preview-17.png" />
@@ -264,10 +257,13 @@ onMounted(() => {
       >
         设备监控
       </div>
-      <div
-        id="charts1"
-        class="w-[10rem] h-[10rem] bg-[url('src/assets/framework/preview-15.png')] bg-cover"
-      />
+      <div class="flex flex-row justify-center h-[100%}">
+        <div
+          id="charts1"
+          class="w-[15rem] h-[15rem] bg-[url('src/assets/framework/preview-15.png')] bg-cover"
+        />
+        <ChartTable />
+      </div>
     </div>
   </div>
 </template>
